@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
 using Platformer.Model;
 using Platformer.Core;
 using UnityEngine.InputSystem;
+using JumpState = Platformer.Gameplay.JumpState;
+using Platformer.Interfaces;
 
 namespace Platformer.Mechanics
 {
@@ -13,7 +13,7 @@ namespace Platformer.Mechanics
     /// This is the main class used to implement control of the player.
     /// It is a superset of the AnimationController class, but is inlined to allow for any kind of customisation.
     /// </summary>
-    public class PlayerController : KinematicObject
+    public class PlayerController : KinematicObject, IGroundProbe, IPlayerInput, IJumpModel
     {
         public AudioClip jumpAudio;
         public AudioClip respawnAudio;
@@ -29,13 +29,11 @@ namespace Platformer.Mechanics
         public float jumpTakeOffSpeed = 7;
 
         public JumpState jumpState = JumpState.Grounded;
-        private bool stopJump;
         /*internal new*/ public Collider2D collider2d;
         /*internal new*/ public AudioSource audioSource;
         public Health health;
         public bool controlEnabled = true;
 
-        bool jump;
         Vector2 move;
         SpriteRenderer spriteRenderer;
         internal Animator animator;
@@ -45,6 +43,17 @@ namespace Platformer.Mechanics
         private InputAction m_JumpAction;
 
         public Bounds Bounds => collider2d.bounds;
+
+        private PlayerJumpLogic jumpLogic = new PlayerJumpLogic();
+        private bool applyJumpCutPending;
+        private bool doJumpImpulsePending;
+
+        float IJumpModel.JumpModifier => model.jumpModifier;
+        float IJumpModel.JumpDeceleration => model.jumpDeceleration;
+
+        public float MoveX() => m_MoveAction.ReadValue<Vector2>().x;
+        public bool JumpPressedThisFrame() => m_JumpAction.WasPressedThisFrame();
+        public bool JumpReleasedThisFrame() => m_JumpAction.WasReleasedThisFrame();
 
         void Awake()
         {
@@ -56,9 +65,6 @@ namespace Platformer.Mechanics
 
             m_MoveAction = InputSystem.actions.FindAction("Player/Move");
             m_JumpAction = InputSystem.actions.FindAction("Player/Jump");
-            
-            m_MoveAction.Enable();
-            m_JumpAction.Enable();
         }
 
         protected override void Update()
@@ -66,86 +72,68 @@ namespace Platformer.Mechanics
             if (controlEnabled)
             {
                 move.x = m_MoveAction.ReadValue<Vector2>().x;
-                if (jumpState == JumpState.Grounded && m_JumpAction.WasPressedThisFrame())
-                    jumpState = JumpState.PrepareToJump;
-                else if (m_JumpAction.WasReleasedThisFrame())
-                {
-                    stopJump = true;
-                    Schedule<PlayerStopJump>().player = this;
-                }
+                m_MoveAction.Enable();
+                m_JumpAction.Enable();
             }
             else
             {
                 move.x = 0;
-            }
-            UpdateJumpState();
-            base.Update();
-        }
-
-        void UpdateJumpState()
-        {
-            jump = false;
-            switch (jumpState)
-            {
-                case JumpState.PrepareToJump:
-                    jumpState = JumpState.Jumping;
-                    jump = true;
-                    stopJump = false;
-                    break;
-                case JumpState.Jumping:
-                    if (!IsGrounded)
-                    {
-                        Schedule<PlayerJumped>().player = this;
-                        jumpState = JumpState.InFlight;
-                    }
-                    break;
-                case JumpState.InFlight:
-                    if (IsGrounded)
-                    {
-                        Schedule<PlayerLanded>().player = this;
-                        jumpState = JumpState.Landed;
-                    }
-                    break;
-                case JumpState.Landed:
-                    jumpState = JumpState.Grounded;
-                    break;
-            }
-        }
-
-        protected override void ComputeVelocity()
-        {
-            if (jump && IsGrounded)
-            {
-                velocity.y = jumpTakeOffSpeed * model.jumpModifier;
-                jump = false;
-            }
-            else if (stopJump)
-            {
-                stopJump = false;
-                if (velocity.y > 0)
-                {
-                    velocity.y = velocity.y * model.jumpDeceleration;
-                }
+                m_MoveAction.Disable();
+                m_JumpAction.Disable();
             }
 
-            if (move.x > 0.01f)
-                spriteRenderer.flipX = false;
-            else if (move.x < -0.01f)
-                spriteRenderer.flipX = true;
+            var outp = jumpLogic.Tick(
+                jumpState,
+                this,
+                this,
+                this,
+                maxSpeed,
+                jumpTakeOffSpeed,
+                velocity.y
+                );
+
+            doJumpImpulsePending = outp.DoJumpImpulse;
+            applyJumpCutPending = outp.ApplyJumpCut;
+
+            targetVelocity = new Vector2(outp.TargetVelocityX, 0f);
+
+            if (outp.TargetVelocityX > 0.01f) spriteRenderer.flipX = false;
+            else if (outp.TargetVelocityX < -0.01f) spriteRenderer.flipX = true;
 
             animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
-            targetVelocity = move * maxSpeed;
+            // Fire original Simulation events when state edges happen
+            if (jumpState == JumpState.Jumping && jumpLogic.State == JumpState.InFlight && !IsGrounded)
+            {
+                Schedule<PlayerJumped>().player = this;
+            }
+            if ((jumpState == JumpState.InFlight || jumpState == JumpState.Jumping) && jumpLogic.State == JumpState.Landed && IsGrounded)
+            {
+                Schedule<PlayerLanded>().player = this;
+            }
+
+            jumpState = jumpLogic.State;
+
+            base.Update();
         }
 
-        public enum JumpState
+        protected override void ComputeVelocity()
         {
-            Grounded,
-            PrepareToJump,
-            Jumping,
-            InFlight,
-            Landed
+            velocity.y = jumpLogic.ComputeNewVelY(
+                IsGrounded,
+                velocity.y,
+                doJumpImpulsePending,
+                applyJumpCutPending,
+                jumpTakeOffSpeed,
+                model.jumpModifier,
+                model.jumpDeceleration
+                );
+
+            doJumpImpulsePending = false;
+            applyJumpCutPending = false;
+
+            targetVelocity = new Vector2(move.x * maxSpeed, velocity.y);
         }
     }
 }
