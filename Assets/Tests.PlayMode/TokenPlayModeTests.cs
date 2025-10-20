@@ -25,7 +25,22 @@ static class TestSprites
 }
 
 public class TokenPlaymodeTests
-{
+{   
+    // Helper to create a silent AudioClip to avoid null references
+    static AudioClip MakeSilentClip(float seconds = 0.25f, int sampleRate = 44100)
+    {
+        int length = Mathf.Max(1, Mathf.RoundToInt(seconds * sampleRate));
+        return AudioClip.Create("TestSilent", length, 1, sampleRate, false);
+    }
+
+    // Ensure only one AudioListener exists in the scene to avoid warnings
+    void EnsureSingleAudioListener()
+    {
+        var listeners = Object.FindObjectsByType<AudioListener>(FindObjectsSortMode.None);
+        for (int i = 1; i < listeners.Length; i++) listeners[i].enabled = false;
+        if (listeners.Length == 0) new GameObject("TestAudioListener").AddComponent<AudioListener>();
+    }
+
     // Helper to create a TokenInstance at given position, with specified idle/collected frame counts
     TokenInstance CreateToken(Vector3 pos, out SpriteRenderer sr, int idleFrames = 3, int collectedFrames = 3)
     {
@@ -33,13 +48,16 @@ public class TokenPlaymodeTests
         go.transform.position = pos;
 
         sr = go.AddComponent<SpriteRenderer>();
-        var col = go.AddComponent<CircleCollider2D>();
-        col.isTrigger = true;
+        var animator = go.AddComponent<Animator>();           // <-- add Animator BEFORE PlayerController
+        TestAnimatorUtil.EnsureAnimatorHasController(animator);              // avoid warnings
+        var col = go.AddComponent<CircleCollider2D>(); col.isTrigger = true;
 
         var token = go.AddComponent<TokenInstance>();
         token.idleAnimation      = TestSprites.MakeFrames(idleFrames);
         token.collectedAnimation = TestSprites.MakeFrames(collectedFrames);
-        sr.sprite = token.idleAnimation[0]; // start on first idle sprite
+        sr.sprite = token.idleAnimation[0];
+
+        token.tokenCollectAudio = MakeSilentClip();
 
         return token;
     }
@@ -65,7 +83,8 @@ public class TokenPlaymodeTests
         var rb = go.AddComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
         go.AddComponent<SpriteRenderer>();
-        go.AddComponent<Animator>();
+        var animator = go.AddComponent<Animator>();           // <-- add Animator BEFORE PlayerController
+        TestAnimatorUtil.EnsureAnimatorHasController(animator);              // avoid warnings
         var pc = go.AddComponent<Platformer.Mechanics.PlayerController>(); // presence is enough for TokenInstance to detect
         pc.enabled = false; // disable to avoid side effects
         return go;
@@ -75,6 +94,8 @@ public class TokenPlaymodeTests
     [UnityTest]
     public IEnumerator Token_Spawns_With_Idle_Sprite()
     {
+        EnsureSingleAudioListener();    
+
         var token = CreateToken(Vector3.zero, out var sr, idleFrames: 2, collectedFrames: 2);
         yield return null; // allow Awake/Start
         Assert.IsNotNull(sr.sprite, "Token should have an idle sprite assigned.");
@@ -85,6 +106,8 @@ public class TokenPlaymodeTests
     [UnityTest]
     public IEnumerator NonPlayer_Collision_Does_Not_Collect()
     {
+        EnsureSingleAudioListener();
+        
         var token = CreateToken(Vector3.zero, out var sr, idleFrames: 2, collectedFrames: 2);
         yield return null;
 
@@ -109,6 +132,8 @@ public class TokenPlaymodeTests
     [UnityTest]
     public IEnumerator Player_Collision_Switches_To_Collected_State()
     {
+        EnsureSingleAudioListener();
+
         // Add a listener to silence audio warnings during tests
         new GameObject("TestAudioListener").AddComponent<AudioListener>();
 
