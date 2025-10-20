@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.TestTools;
+using Unity.Cinemachine;
 
 using Platformer.Core;       // Simulation
 using Platformer.Gameplay;   // events
@@ -42,9 +43,10 @@ public class PlayerDeathPlayModeTests
         var animator = go.AddComponent<Animator>();           // <-- add Animator BEFORE PlayerController
         TestAnimatorUtil.EnsureAnimatorHasController(animator);              // avoid warnings
 
-        var col = go.AddComponent<BoxCollider2D>();
+        go.AddComponent<BoxCollider2D>();
         var rb = go.AddComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
+        go.AddComponent<Health>(); 
 
         var pc = go.AddComponent<PlayerController>(); // Awake runs here and caches Animator
         pc.enabled = false;                           // avoid Update() (input/anim spam)
@@ -53,6 +55,11 @@ public class PlayerDeathPlayModeTests
         // Wire the shared model like the game does
         var model = Platformer.Core.Simulation.GetModel<Platformer.Model.PlatformerModel>();
         model.player = pc;
+
+        // Add a minimal Cinemachine vcam so PlayerDeath can clear Follow/LookAt safely
+        var vcamGO = new GameObject("VCam");
+        var vcam = vcamGO.AddComponent<CinemachineCamera>();
+        model.virtualCamera = vcam;
 
         return pc;
     }
