@@ -1,3 +1,5 @@
+// Sanity check to ensure EditMode tests run correctly
+
 using System.Collections;
 using NUnit.Framework;
 using UnityEngine;

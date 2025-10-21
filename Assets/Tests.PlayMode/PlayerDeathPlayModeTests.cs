@@ -46,6 +46,7 @@ public class PlayerDeathPlayModeTests
         go.AddComponent<BoxCollider2D>();
         var rb = go.AddComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Kinematic;
+        // Health component is needed to track IsAlive state
         go.AddComponent<Health>(); 
 
         var pc = go.AddComponent<PlayerController>(); // Awake runs here and caches Animator
@@ -98,6 +99,7 @@ public class PlayerDeathPlayModeTests
 
         yield return null; // Simulation.Tick executes -> PlayerDeath
 
+        // Verify player is dead and control disabled
         Assert.IsFalse(player.health.IsAlive, "Player should be dead after entering a death zone.");
         Assert.IsFalse(player.controlEnabled, "Player control should be disabled on death.");
     }
@@ -113,12 +115,14 @@ public class PlayerDeathPlayModeTests
         var enemy = CreateEnemy(new Vector3(0, 0.6f, 0), new Vector2(1f, 1f));
         yield return null; // Let physics register colliders
 
+        // Simulate collision: schedule the gameplay event directly
         var ev = Platformer.Core.Simulation.Schedule<PlayerEnemyCollision>();
         ev.player = player;
         ev.enemy = enemy;
 
         yield return null; // Simulation.Tick executes -> PlayerDeath
 
+        // Verify player is dead and control disabled
         Assert.IsFalse(player.health.IsAlive);
         Assert.IsFalse(player.controlEnabled);
     }
@@ -132,6 +136,7 @@ public class PlayerDeathPlayModeTests
 
         var player = CreateBarePlayer(Vector3.zero);
 
+        // Verify starting state
         Assert.IsTrue(player.health.IsAlive, "Player should start alive.");
 
         // Drive HP to zero regardless of defaults
@@ -143,6 +148,7 @@ public class PlayerDeathPlayModeTests
         yield return null;
         yield return null;
 
+        // Verify player is dead
         Assert.IsFalse(player.health.IsAlive, "HP should be zero after decrements.");
     }
 
@@ -161,6 +167,7 @@ public class PlayerDeathPlayModeTests
 
         yield return null;
 
+        // Verify control disabled
         Assert.IsFalse(player.health.IsAlive, "Die() is called in PlayerDeath.");
         Assert.IsFalse(player.controlEnabled, "Control should be disabled by PlayerDeath.");
     }

@@ -54,12 +54,14 @@ public class EnemyPathPlayModeTests
 
         public PathValidator(List<Collider2D> walls, List<Collider2D> grounds, PathValidationOptions opt)
         {
-            _walls = walls; _grounds = grounds; _opt = opt;
+            _walls = walls;
+            _grounds = grounds; 
+            _opt = opt;
         }
 
         public bool Validate(PatrolPath path, out string reason)
         {
-            // endpoints in world space
+            // Endpoints in world space
             Vector2 a = path.transform.TransformPoint(path.startPosition);
             Vector2 b = path.transform.TransformPoint(path.endPosition);
             float length = Vector2.Distance(a, b);
@@ -69,9 +71,11 @@ public class EnemyPathPlayModeTests
                 return false;
             }
 
+            // Sample along the path
             int samples = Mathf.Max(1, Mathf.CeilToInt(length / Mathf.Max(0.01f, _opt.sampleStep)));
-            Vector2 down = (_opt.downDirection == Vector2.zero ? Vector2.down : _opt.downDirection).normalized;
+            Vector2 down = (_opt.downDirection == Vector2.zero ? Vector2.down : _opt.downDirection).normalized; // avoid zero
 
+            // Iterate samples
             for (int i = 0; i <= samples; i++)
             {
                 float t = i / (float)samples;

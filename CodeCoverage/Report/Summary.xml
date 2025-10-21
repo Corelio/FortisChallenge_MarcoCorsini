@@ -1,87 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>10/18/2025 - 1:55:51 PM</Generatedon>
-    <Parser>MultiReportParser (2x OpenCoverParser)</Parser>
+    <Generatedon>10/20/2025 - 10:23:39 PM</Generatedon>
+    <Parser>MultiReportParser (4x OpenCoverParser)</Parser>
     <Assemblies>7</Assemblies>
-    <Classes>51</Classes>
-    <Files>48</Files>
-    <Coveredlines>162</Coveredlines>
-    <Uncoveredlines>605</Uncoveredlines>
-    <Coverablelines>767</Coverablelines>
-    <Totallines>2571</Totallines>
-    <Linecoverage>21.1</Linecoverage>
+    <Classes>56</Classes>
+    <Files>51</Files>
+    <Coveredlines>812</Coveredlines>
+    <Uncoveredlines>552</Uncoveredlines>
+    <Coverablelines>1364</Coverablelines>
+    <Totallines>3178</Totallines>
+    <Linecoverage>59.5</Linecoverage>
     <Coveredbranches>0</Coveredbranches>
     <Totalbranches>0</Totalbranches>
-    <Coveredmethods>30</Coveredmethods>
-    <Totalmethods>181</Totalmethods>
-    <Methodcoverage>16.5</Methodcoverage>
+    <Coveredmethods>116</Coveredmethods>
+    <Totalmethods>214</Totalmethods>
+    <Methodcoverage>54.2</Methodcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="Assembly-CSharp" classes="6" coverage="0" coveredlines="0" coverablelines="73" totallines="208" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0">
-      <Class name="EmitParticlesOnLand" coverage="0" coveredlines="0" coverablelines="12" totallines="39" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Jiggler" coverage="0" coveredlines="0" coverablelines="23" totallines="58" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
-      <Class name="PlatformerJumpPad" coverage="0" coveredlines="0" coverablelines="8" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="PlatformerSpeedPad" coverage="0" coveredlines="0" coverablelines="12" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
-      <Class name="SimpleTrigger" coverage="0" coveredlines="0" coverablelines="5" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="TemplateEditorDetection" coverage="0" coveredlines="0" coverablelines="13" totallines="41" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+    <Assembly name="Assembly-CSharp" classes="6" coverage="0" coveredlines="0" coverablelines="87" totallines="208" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="12" methodcoverage="0">
+      <Class name="EmitParticlesOnLand" coverage="0" coveredlines="0" coverablelines="17" totallines="39" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Jiggler" coverage="0" coveredlines="0" coverablelines="25" totallines="58" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="PlatformerJumpPad" coverage="0" coveredlines="0" coverablelines="10" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="PlatformerSpeedPad" coverage="0" coveredlines="0" coverablelines="14" totallines="27" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="SimpleTrigger" coverage="0" coveredlines="0" coverablelines="7" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="TemplateEditorDetection" coverage="0" coveredlines="0" coverablelines="14" totallines="41" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
     </Assembly>
-    <Assembly name="Assembly-CSharp-Editor" classes="1" coverage="0" coveredlines="0" coverablelines="19" totallines="40" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0">
-      <Class name="Platformer.PatrolPathGizmo" coverage="0" coveredlines="0" coverablelines="19" totallines="40" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+    <Assembly name="Assembly-CSharp-Editor" classes="1" coverage="0" coveredlines="0" coverablelines="24" totallines="40" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0">
+      <Class name="Platformer.PatrolPathGizmo" coverage="0" coveredlines="0" coverablelines="24" totallines="40" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
     </Assembly>
-    <Assembly name="Platformer.Runtime" classes="36" coverage="4.8" coveredlines="24" coverablelines="496" totallines="2007" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="128" methodcoverage="3.1">
-      <Class name="Platformer.Core.Fuzzy" coverage="0" coveredlines="0" coverablelines="6" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
-      <Class name="Platformer.Core.HeapQueue[T]" coverage="0" coveredlines="0" coverablelines="46" totallines="112" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
-      <Class name="Platformer.Core.Simulation" coverage="0" coveredlines="0" coverablelines="44" totallines="203" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
-      <Class name="Platformer.Core.SimulationEvent[T]" coverage="0" coveredlines="0" coverablelines="4" totallines="63" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+    <Assembly name="Platformer.Runtime" classes="36" coverage="46.5" coveredlines="330" coverablelines="709" totallines="2021" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="58" totalmethods="130" methodcoverage="44.6">
+      <Class name="Platformer.Core.Fuzzy" coverage="0" coveredlines="0" coverablelines="14" totallines="32" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="Platformer.Core.HeapQueue[T]" coverage="85.2" coveredlines="52" coverablelines="61" totallines="112" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="13" methodcoverage="53.8" />
+      <Class name="Platformer.Core.Simulation" coverage="63.3" coveredlines="45" coverablelines="71" totallines="203" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="7" totalmethods="13" methodcoverage="53.8" />
+      <Class name="Platformer.Core.SimulationEvent[T]" coverage="100" coveredlines="7" coverablelines="7" totallines="63" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
       <Class name="Platformer.Core.SimulationInstanceRegister[T]" coverage="0" coveredlines="0" coverablelines="1" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.EnablePlayerInput" coverage="0" coveredlines="0" coverablelines="4" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.EnemyDeath" coverage="0" coveredlines="0" coverablelines="5" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.HealthIsZero" coverage="0" coveredlines="0" coverablelines="2" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerDeath" coverage="0" coveredlines="0" coverablelines="13" totallines="36" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerEnemyCollision" coverage="0" coveredlines="0" coverablelines="14" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerEnteredDeathZone" coverage="0" coveredlines="0" coverablelines="3" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerEnteredVictoryZone" coverage="0" coveredlines="0" coverablelines="4" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerJumped" coverage="0" coveredlines="0" coverablelines="3" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerJumpLogic" coverage="100" coveredlines="24" coverablelines="24" totallines="79" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
-      <Class name="Platformer.Gameplay.PlayerLanded" coverage="0" coveredlines="0" coverablelines="1" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerSpawn" coverage="0" coveredlines="0" coverablelines="14" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerStopJump" coverage="0" coveredlines="0" coverablelines="1" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="Platformer.Gameplay.PlayerTokenCollision" coverage="0" coveredlines="0" coverablelines="3" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.AnimationController" coverage="0" coveredlines="0" coverablelines="21" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.DeathZone" coverage="0" coveredlines="0" coverablelines="5" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.EnemyController" coverage="0" coveredlines="0" coverablelines="16" totallines="55" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.GameController" coverage="0" coveredlines="0" coverablelines="8" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.Health" coverage="0" coveredlines="0" coverablelines="13" totallines="60" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.KinematicObject" coverage="0" coveredlines="0" coverablelines="58" totallines="176" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="13" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.PatrolPath" coverage="0" coveredlines="0" coverablelines="11" totallines="66" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.PlayerController" coverage="0" coveredlines="0" coverablelines="46" totallines="139" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="10" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.TokenController" coverage="0" coveredlines="0" coverablelines="20" totallines="71" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.TokenInstance" coverage="0" coveredlines="0" coverablelines="19" totallines="62" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
-      <Class name="Platformer.Mechanics.VictoryZone" coverage="0" coveredlines="0" coverablelines="5" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="Platformer.Gameplay.EnablePlayerInput" coverage="0" coveredlines="0" coverablelines="5" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Platformer.Gameplay.EnemyDeath" coverage="0" coveredlines="0" coverablelines="6" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="Platformer.Gameplay.HealthIsZero" coverage="100" coveredlines="3" coverablelines="3" totallines="21" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="Platformer.Gameplay.PlayerDeath" coverage="93.7" coveredlines="15" coverablelines="16" totallines="36" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+      <Class name="Platformer.Gameplay.PlayerEnemyCollision" coverage="29.6" coveredlines="8" coverablelines="27" totallines="53" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+      <Class name="Platformer.Gameplay.PlayerEnteredDeathZone" coverage="100" coveredlines="4" coverablelines="4" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+      <Class name="Platformer.Gameplay.PlayerEnteredVictoryZone" coverage="0" coveredlines="0" coverablelines="5" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Platformer.Gameplay.PlayerJumped" coverage="0" coveredlines="0" coverablelines="4" totallines="20" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="Platformer.Gameplay.PlayerJumpLogic" coverage="100" coveredlines="33" coverablelines="33" totallines="81" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="5" methodcoverage="100" />
+      <Class name="Platformer.Gameplay.PlayerLanded" coverage="0" coveredlines="0" coverablelines="2" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="Platformer.Gameplay.PlayerSpawn" coverage="6.6" coveredlines="1" coverablelines="15" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="2" methodcoverage="50" />
+      <Class name="Platformer.Gameplay.PlayerStopJump" coverage="0" coveredlines="0" coverablelines="2" totallines="19" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="Platformer.Gameplay.PlayerTokenCollision" coverage="100" coveredlines="4" coverablelines="4" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+      <Class name="Platformer.Mechanics.AnimationController" coverage="55.1" coveredlines="16" coverablelines="29" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
+      <Class name="Platformer.Mechanics.DeathZone" coverage="0" coveredlines="0" coverablelines="8" totallines="25" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+      <Class name="Platformer.Mechanics.EnemyController" coverage="82.6" coveredlines="19" coverablelines="23" totallines="55" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
+      <Class name="Platformer.Mechanics.GameController" coverage="0" coveredlines="0" coverablelines="11" totallines="38" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+      <Class name="Platformer.Mechanics.Health" coverage="84.2" coveredlines="16" coverablelines="19" totallines="60" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="6" methodcoverage="83.3" />
+      <Class name="Platformer.Mechanics.KinematicObject" coverage="82.9" coveredlines="68" coverablelines="82" totallines="176" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="13" methodcoverage="69.2" />
+      <Class name="Platformer.Mechanics.PatrolPath" coverage="0" coveredlines="0" coverablelines="16" totallines="66" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="Platformer.Mechanics.PlayerController" coverage="27.5" coveredlines="16" coverablelines="58" totallines="151" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="10" methodcoverage="30" />
+      <Class name="Platformer.Mechanics.TokenController" coverage="0" coveredlines="0" coverablelines="36" totallines="71" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
+      <Class name="Platformer.Mechanics.TokenInstance" coverage="92" coveredlines="23" coverablelines="25" totallines="62" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="4" totalmethods="4" methodcoverage="100" />
+      <Class name="Platformer.Mechanics.VictoryZone" coverage="0" coveredlines="0" coverablelines="8" totallines="22" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
       <Class name="Platformer.Model.PlatformerModel" coverage="0" coveredlines="0" coverablelines="2" totallines="42" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
-      <Class name="Platformer.UI.MainUIController" coverage="0" coveredlines="0" coverablelines="7" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.UI.MetaGameController" coverage="0" coveredlines="0" coverablelines="18" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="4" methodcoverage="0" />
-      <Class name="Platformer.View.AnimatedTile" coverage="0" coveredlines="0" coverablelines="14" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
-      <Class name="Platformer.View.AnimatedTileEditor" coverage="0" coveredlines="0" coverablelines="28" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
-      <Class name="Platformer.View.ParallaxLayer" coverage="0" coveredlines="0" coverablelines="5" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
-      <Class name="PlayAudioClip" coverage="0" coveredlines="0" coverablelines="8" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Platformer.UI.MainUIController" coverage="0" coveredlines="0" coverablelines="11" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Platformer.UI.MetaGameController" coverage="0" coveredlines="0" coverablelines="31" totallines="76" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="5" methodcoverage="0" />
+      <Class name="Platformer.View.AnimatedTile" coverage="0" coveredlines="0" coverablelines="20" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="Platformer.View.AnimatedTileEditor" coverage="0" coveredlines="0" coverablelines="33" totallines="97" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
+      <Class name="Platformer.View.ParallaxLayer" coverage="0" coveredlines="0" coverablelines="7" totallines="29" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="3" methodcoverage="0" />
+      <Class name="PlayAudioClip" coverage="0" coveredlines="0" coverablelines="10" totallines="34" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="2" methodcoverage="0" />
     </Assembly>
-    <Assembly name="Tests.EditMode" classes="5" coverage="100" coveredlines="138" coverablelines="138" totallines="1286" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="26" totalmethods="26" methodcoverage="100">
+    <Assembly name="Tests.EditMode" classes="5" coverage="100" coveredlines="153" coverablelines="153" totallines="1288" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="26" totalmethods="26" methodcoverage="100">
       <Class name="FakeGround" coverage="100" coveredlines="1" coverablelines="1" totallines="318" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
       <Class name="FakeInput" coverage="100" coveredlines="3" coverablelines="3" totallines="318" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="3" totalmethods="3" methodcoverage="100" />
       <Class name="FakeModel" coverage="100" coveredlines="2" coverablelines="2" totallines="318" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="5" totalmethods="5" methodcoverage="100" />
-      <Class name="PlayerJumpLogicTests" coverage="100" coveredlines="130" coverablelines="130" totallines="318" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="14" totalmethods="14" methodcoverage="100" />
-      <Class name="SanityCheck" coverage="100" coveredlines="2" coverablelines="2" totallines="14" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="PlayerJumpLogicTests" coverage="100" coveredlines="144" coverablelines="144" totallines="318" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="14" totalmethods="14" methodcoverage="100" />
+      <Class name="SanityCheck" coverage="100" coveredlines="3" coverablelines="3" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
     </Assembly>
-    <Assembly name="Tests.PlayMode" classes="1" coverage="0" coveredlines="0" coverablelines="3" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0">
-      <Class name="SanityCheck" coverage="0" coveredlines="0" coverablelines="3" totallines="16" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="1" methodcoverage="0" />
+    <Assembly name="Tests.PlayMode" classes="6" coverage="99.6" coveredlines="329" coverablelines="330" totallines="844" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="32" totalmethods="32" methodcoverage="100">
+      <Class name="EnemyPathPlayModeTests" coverage="100" coveredlines="110" coverablelines="110" totallines="196" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="11" totalmethods="11" methodcoverage="100" />
+      <Class name="PlayerDeathPlayModeTests" coverage="100" coveredlines="87" coverablelines="87" totallines="174" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="9" totalmethods="9" methodcoverage="100" />
+      <Class name="SanityCheck" coverage="75" coveredlines="3" coverablelines="4" totallines="58" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="TestAnimatorUtil" coverage="100" coveredlines="20" coverablelines="20" totallines="58" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="2" totalmethods="2" methodcoverage="100" />
+      <Class name="TestSprites" coverage="100" coveredlines="14" coverablelines="14" totallines="179" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="1" totalmethods="1" methodcoverage="100" />
+      <Class name="TokenPlaymodeTests" coverage="100" coveredlines="95" coverablelines="95" totallines="179" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="8" totalmethods="8" methodcoverage="100" />
     </Assembly>
-    <Assembly name="Unity.2DPlatformer.Tutorials" classes="1" coverage="0" coveredlines="0" coverablelines="19" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0">
-      <Class name="Unity.Tutorials.PublishCriteria" coverage="0" coveredlines="0" coverablelines="19" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+    <Assembly name="Unity.2DPlatformer.Tutorials" classes="1" coverage="0" coveredlines="0" coverablelines="33" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0">
+      <Class name="Unity.Tutorials.PublishCriteria" coverage="0" coveredlines="0" coverablelines="33" totallines="69" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
     </Assembly>
-    <Assembly name="Unity.Platformer.Tutorials" classes="1" coverage="0" coveredlines="0" coverablelines="19" totallines="59" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0">
-      <Class name="Unity.Tutorials.TutorialCallbacks" coverage="0" coveredlines="0" coverablelines="19" totallines="59" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
+    <Assembly name="Unity.Platformer.Tutorials" classes="1" coverage="0" coveredlines="0" coverablelines="28" totallines="59" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0">
+      <Class name="Unity.Tutorials.TutorialCallbacks" coverage="0" coveredlines="0" coverablelines="28" totallines="59" branchcoverage="" coveredbranches="0" totalbranches="0" coveredmethods="0" totalmethods="6" methodcoverage="0" />
     </Assembly>
   </Coverage>
 </CoverageReport>

@@ -1,3 +1,5 @@
+// Sanity check to ensure PlayMode tests run correctly
+
 using NUnit.Framework;
 using System.Collections;
 using UnityEngine;

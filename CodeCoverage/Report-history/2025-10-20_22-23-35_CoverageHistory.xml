@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2025-10-20_22-23-35" tag="">
+  <assembly name="Assembly-CSharp">
+    <class name="EmitParticlesOnLand" coveredlines="0" coverablelines="17" totallines="39" coveredbranches="0" totalbranches="0" />
+    <class name="Jiggler" coveredlines="0" coverablelines="25" totallines="58" coveredbranches="0" totalbranches="0" />
+    <class name="PlatformerJumpPad" coveredlines="0" coverablelines="10" totallines="21" coveredbranches="0" totalbranches="0" />
+    <class name="PlatformerSpeedPad" coveredlines="0" coverablelines="14" totallines="27" coveredbranches="0" totalbranches="0" />
+    <class name="SimpleTrigger" coveredlines="0" coverablelines="7" totallines="22" coveredbranches="0" totalbranches="0" />
+    <class name="TemplateEditorDetection" coveredlines="0" coverablelines="14" totallines="41" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="Assembly-CSharp-Editor">
+    <class name="Platformer.PatrolPathGizmo" coveredlines="0" coverablelines="24" totallines="40" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="Platformer.Runtime">
+    <class name="Platformer.Core.Fuzzy" coveredlines="0" coverablelines="14" totallines="32" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Core.HeapQueue[T]" coveredlines="52" coverablelines="61" totallines="112" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Core.Simulation" coveredlines="45" coverablelines="71" totallines="203" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Core.SimulationEvent[T]" coveredlines="7" coverablelines="7" totallines="63" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Core.SimulationInstanceRegister[T]" coveredlines="0" coverablelines="1" totallines="16" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.EnablePlayerInput" coveredlines="0" coverablelines="5" totallines="19" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.EnemyDeath" coveredlines="0" coverablelines="6" totallines="22" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.HealthIsZero" coveredlines="3" coverablelines="3" totallines="21" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerDeath" coveredlines="15" coverablelines="16" totallines="36" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerEnemyCollision" coveredlines="8" coverablelines="27" totallines="53" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerEnteredDeathZone" coveredlines="4" coverablelines="4" totallines="22" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerEnteredVictoryZone" coveredlines="0" coverablelines="5" totallines="24" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerJumped" coveredlines="0" coverablelines="4" totallines="20" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerJumpLogic" coveredlines="33" coverablelines="33" totallines="81" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerLanded" coveredlines="0" coverablelines="2" totallines="19" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerSpawn" coveredlines="1" coverablelines="15" totallines="29" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerStopJump" coveredlines="0" coverablelines="2" totallines="19" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Gameplay.PlayerTokenCollision" coveredlines="4" coverablelines="4" totallines="24" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.AnimationController" coveredlines="16" coverablelines="29" totallines="76" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.DeathZone" coveredlines="0" coverablelines="8" totallines="25" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.EnemyController" coveredlines="19" coverablelines="23" totallines="55" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.GameController" coveredlines="0" coverablelines="11" totallines="38" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.Health" coveredlines="16" coverablelines="19" totallines="60" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.KinematicObject" coveredlines="68" coverablelines="82" totallines="176" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.PatrolPath" coveredlines="0" coverablelines="16" totallines="66" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.PlayerController" coveredlines="16" coverablelines="58" totallines="151" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.TokenController" coveredlines="0" coverablelines="36" totallines="71" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.TokenInstance" coveredlines="23" coverablelines="25" totallines="62" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Mechanics.VictoryZone" coveredlines="0" coverablelines="8" totallines="22" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.Model.PlatformerModel" coveredlines="0" coverablelines="2" totallines="42" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.UI.MainUIController" coveredlines="0" coverablelines="11" totallines="29" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.UI.MetaGameController" coveredlines="0" coverablelines="31" totallines="76" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.View.AnimatedTile" coveredlines="0" coverablelines="20" totallines="97" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.View.AnimatedTileEditor" coveredlines="0" coverablelines="33" totallines="97" coveredbranches="0" totalbranches="0" />
+    <class name="Platformer.View.ParallaxLayer" coveredlines="0" coverablelines="7" totallines="29" coveredbranches="0" totalbranches="0" />
+    <class name="PlayAudioClip" coveredlines="0" coverablelines="10" totallines="34" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="Tests.EditMode">
+    <class name="FakeGround" coveredlines="1" coverablelines="1" totallines="318" coveredbranches="0" totalbranches="0" />
+    <class name="FakeInput" coveredlines="3" coverablelines="3" totallines="318" coveredbranches="0" totalbranches="0" />
+    <class name="FakeModel" coveredlines="2" coverablelines="2" totallines="318" coveredbranches="0" totalbranches="0" />
+    <class name="PlayerJumpLogicTests" coveredlines="144" coverablelines="144" totallines="318" coveredbranches="0" totalbranches="0" />
+    <class name="SanityCheck" coveredlines="3" coverablelines="3" totallines="16" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="Tests.PlayMode">
+    <class name="EnemyPathPlayModeTests" coveredlines="110" coverablelines="110" totallines="196" coveredbranches="0" totalbranches="0" />
+    <class name="PlayerDeathPlayModeTests" coveredlines="87" coverablelines="87" totallines="174" coveredbranches="0" totalbranches="0" />
+    <class name="SanityCheck" coveredlines="3" coverablelines="4" totallines="58" coveredbranches="0" totalbranches="0" />
+    <class name="TestAnimatorUtil" coveredlines="20" coverablelines="20" totallines="58" coveredbranches="0" totalbranches="0" />
+    <class name="TestSprites" coveredlines="14" coverablelines="14" totallines="179" coveredbranches="0" totalbranches="0" />
+    <class name="TokenPlaymodeTests" coveredlines="95" coverablelines="95" totallines="179" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="Unity.2DPlatformer.Tutorials">
+    <class name="Unity.Tutorials.PublishCriteria" coveredlines="0" coverablelines="33" totallines="69" coveredbranches="0" totalbranches="0" />
+  </assembly>
+  <assembly name="Unity.Platformer.Tutorials">
+    <class name="Unity.Tutorials.TutorialCallbacks" coveredlines="0" coverablelines="28" totallines="59" coveredbranches="0" totalbranches="0" />
+  </assembly>
+</coverage>

@@ -417,9 +417,9 @@
               <Name>PlayAudioClip::PlayAudioClip()</Name>
               <FileRef uid="8" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="137" ordinal="0" offset="0" sl="13" sc="5" el="13" ec="5" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="0" uspid="138" ordinal="0" offset="11" sl="18" sc="5" el="18" ec="5" bec="0" bev="0" fileid="8" />
-                <SequencePoint vc="0" uspid="139" ordinal="0" offset="22" sl="24" sc="5" el="24" ec="5" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" uspid="137" ordinal="0" offset="0" sl="13" sc="0" el="13" ec="0" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" uspid="138" ordinal="0" offset="11" sl="18" sc="0" el="18" ec="0" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" uspid="139" ordinal="0" offset="22" sl="24" sc="0" el="24" ec="0" bec="0" bev="0" fileid="8" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -573,7 +573,7 @@
               <Name>Platformer.View.ParallaxLayer::ParallaxLayer()</Name>
               <FileRef uid="10" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="203" ordinal="0" offset="0" sl="14" sc="9" el="14" ec="9" bec="0" bev="0" fileid="10" />
+                <SequencePoint vc="0" uspid="203" ordinal="0" offset="0" sl="14" sc="0" el="14" ec="0" bec="0" bev="0" fileid="10" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -701,7 +701,7 @@
               <Name>Platformer.UI.MetaGameController::MetaGameController()</Name>
               <FileRef uid="12" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="256" ordinal="0" offset="0" sl="29" sc="9" el="29" ec="9" bec="0" bev="0" fileid="12" />
+                <SequencePoint vc="0" uspid="256" ordinal="0" offset="0" sl="29" sc="0" el="29" ec="0" bec="0" bev="0" fileid="12" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -943,7 +943,7 @@
               <Name>Platformer.Mechanics.GameController::GameController()</Name>
               <FileRef uid="17" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="333" ordinal="0" offset="0" sl="21" sc="9" el="21" ec="9" bec="0" bev="0" fileid="17" />
+                <SequencePoint vc="0" uspid="333" ordinal="0" offset="0" sl="21" sc="0" el="21" ec="0" bec="0" bev="0" fileid="17" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -1023,7 +1023,7 @@
               <Name>Platformer.Mechanics.Health::Health()</Name>
               <FileRef uid="18" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="353" ordinal="0" offset="0" sl="16" sc="9" el="16" ec="9" bec="0" bev="0" fileid="18" />
+                <SequencePoint vc="0" uspid="353" ordinal="0" offset="0" sl="16" sc="0" el="16" ec="0" bec="0" bev="0" fileid="18" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -1411,12 +1411,12 @@
               <Name>Platformer.Mechanics.PlayerController::PlayerController()</Name>
               <FileRef uid="21" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="498" ordinal="0" offset="0" sl="30" sc="9" el="30" ec="9" bec="0" bev="0" fileid="21" />
-                <SequencePoint vc="0" uspid="499" ordinal="0" offset="11" sl="34" sc="9" el="34" ec="9" bec="0" bev="0" fileid="21" />
-                <SequencePoint vc="0" uspid="500" ordinal="0" offset="22" sl="36" sc="9" el="36" ec="9" bec="0" bev="0" fileid="21" />
-                <SequencePoint vc="0" uspid="501" ordinal="0" offset="29" sl="40" sc="9" el="40" ec="9" bec="0" bev="0" fileid="21" />
-                <SequencePoint vc="0" uspid="502" ordinal="0" offset="36" sl="45" sc="9" el="45" ec="9" bec="0" bev="0" fileid="21" />
-                <SequencePoint vc="0" uspid="503" ordinal="0" offset="47" sl="52" sc="9" el="52" ec="9" bec="0" bev="0" fileid="21" />
+                <SequencePoint vc="0" uspid="498" ordinal="0" offset="0" sl="30" sc="0" el="30" ec="0" bec="0" bev="0" fileid="21" />
+                <SequencePoint vc="0" uspid="499" ordinal="0" offset="11" sl="34" sc="0" el="34" ec="0" bec="0" bev="0" fileid="21" />
+                <SequencePoint vc="0" uspid="500" ordinal="0" offset="22" sl="36" sc="0" el="36" ec="0" bec="0" bev="0" fileid="21" />
+                <SequencePoint vc="0" uspid="501" ordinal="0" offset="29" sl="40" sc="0" el="40" ec="0" bec="0" bev="0" fileid="21" />
+                <SequencePoint vc="0" uspid="502" ordinal="0" offset="36" sl="45" sc="0" el="45" ec="0" bec="0" bev="0" fileid="21" />
+                <SequencePoint vc="0" uspid="503" ordinal="0" offset="47" sl="52" sc="0" el="52" ec="0" bec="0" bev="0" fileid="21" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -1497,8 +1497,8 @@
               <Name>Platformer.Mechanics.TokenController::TokenController()</Name>
               <FileRef uid="22" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="542" ordinal="0" offset="0" sl="15" sc="9" el="15" ec="9" bec="0" bev="0" fileid="22" />
-                <SequencePoint vc="0" uspid="543" ordinal="0" offset="11" sl="19" sc="9" el="19" ec="9" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="0" uspid="542" ordinal="0" offset="0" sl="15" sc="0" el="15" ec="0" bec="0" bev="0" fileid="22" />
+                <SequencePoint vc="0" uspid="543" ordinal="0" offset="11" sl="19" sc="0" el="19" ec="0" bec="0" bev="0" fileid="22" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -1563,11 +1563,11 @@
               <Name>Platformer.Mechanics.TokenInstance::TokenInstance()</Name>
               <FileRef uid="23" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="566" ordinal="0" offset="0" sl="18" sc="9" el="18" ec="9" bec="0" bev="0" fileid="23" />
-                <SequencePoint vc="0" uspid="567" ordinal="0" offset="7" sl="22" sc="9" el="22" ec="9" bec="0" bev="0" fileid="23" />
-                <SequencePoint vc="0" uspid="568" ordinal="0" offset="19" sl="27" sc="9" el="27" ec="9" bec="0" bev="0" fileid="23" />
-                <SequencePoint vc="0" uspid="569" ordinal="0" offset="26" sl="30" sc="9" el="30" ec="9" bec="0" bev="0" fileid="23" />
-                <SequencePoint vc="0" uspid="570" ordinal="0" offset="33" sl="31" sc="9" el="31" ec="9" bec="0" bev="0" fileid="23" />
+                <SequencePoint vc="0" uspid="566" ordinal="0" offset="0" sl="18" sc="0" el="18" ec="0" bec="0" bev="0" fileid="23" />
+                <SequencePoint vc="0" uspid="567" ordinal="0" offset="7" sl="22" sc="0" el="22" ec="0" bec="0" bev="0" fileid="23" />
+                <SequencePoint vc="0" uspid="568" ordinal="0" offset="19" sl="27" sc="0" el="27" ec="0" bec="0" bev="0" fileid="23" />
+                <SequencePoint vc="0" uspid="569" ordinal="0" offset="26" sl="30" sc="0" el="30" ec="0" bec="0" bev="0" fileid="23" />
+                <SequencePoint vc="0" uspid="570" ordinal="0" offset="33" sl="31" sc="0" el="31" ec="0" bec="0" bev="0" fileid="23" />
               </SequencePoints>
               <BranchPoints />
             </Method>
@@ -1913,7 +1913,7 @@
               <Name>Platformer.Gameplay.PlayerJumpLogic::PlayerJumpLogic()</Name>
               <FileRef uid="33" />
               <SequencePoints>
-                <SequencePoint vc="0" uspid="685" ordinal="0" offset="0" sl="19" sc="56" el="19" ec="56" bec="0" bev="0" fileid="33" />
+                <SequencePoint vc="0" uspid="685" ordinal="0" offset="0" sl="19" sc="0" el="19" ec="0" bec="0" bev="0" fileid="33" />
               </SequencePoints>
               <BranchPoints />
             </Method>

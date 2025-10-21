@@ -7,6 +7,7 @@ using Platformer.Mechanics;
 // Helper class to create simple test sprites
 static class TestSprites
 {
+    // Create an array of simple white sprites for testing
     public static Sprite[] MakeFrames(int count)
     {
         var frames = new Sprite[count];
@@ -53,7 +54,7 @@ public class TokenPlaymodeTests
         var col = go.AddComponent<CircleCollider2D>(); col.isTrigger = true;
 
         var token = go.AddComponent<TokenInstance>();
-        token.idleAnimation      = TestSprites.MakeFrames(idleFrames);
+        token.idleAnimation = TestSprites.MakeFrames(idleFrames);
         token.collectedAnimation = TestSprites.MakeFrames(collectedFrames);
         sr.sprite = token.idleAnimation[0];
 
@@ -107,25 +108,40 @@ public class TokenPlaymodeTests
     public IEnumerator NonPlayer_Collision_Does_Not_Collect()
     {
         EnsureSingleAudioListener();
-        
-        var token = CreateToken(Vector3.zero, out var sr, idleFrames: 2, collectedFrames: 2);
-        yield return null;
 
-        var firstIdle = sr.sprite;
+        // Enemy case
+        {
+            var token = CreateToken(Vector3.zero, out var sr, idleFrames: 2, collectedFrames: 2);
+            yield return null;
+            var firstIdle = sr.sprite;
 
-        // Enemy overlaps
-        CreateNonPlayer("Enemy", Vector3.zero);
-        yield return new WaitForFixedUpdate(); // process trigger
+            var enemy = CreateNonPlayer("Enemy", Vector3.zero);
+            yield return new WaitForFixedUpdate();
 
-        Assert.IsTrue(token.gameObject.activeInHierarchy, "Enemy must NOT deactivate token.");
-        Assert.AreSame(firstIdle, sr.sprite, "Enemy collision must NOT switch to collected sprite.");
+            // Verify token still active and sprite unchanged
+            Assert.IsTrue(token.gameObject.activeInHierarchy);
+            Assert.AreSame(firstIdle, sr.sprite);
+            // Clean up
+            Object.Destroy(enemy);
+            Object.Destroy(token.gameObject);
+        }
 
-        // Alien overlaps
-        CreateNonPlayer("Alien", Vector3.zero);
-        yield return new WaitForFixedUpdate();
+        // Alien case
+        {
+            var token = CreateToken(Vector3.zero, out var sr, idleFrames: 2, collectedFrames: 2);
+            yield return null;
+            var firstIdle = sr.sprite;
 
-        Assert.IsTrue(token.gameObject.activeInHierarchy, "Alien must NOT deactivate token.");
-        Assert.AreSame(firstIdle, sr.sprite, "Alien collision must NOT switch to collected sprite.");
+            var alien = CreateNonPlayer("Alien", Vector3.zero);
+            yield return new WaitForFixedUpdate();
+
+            // Verify token still active and sprite unchanged
+            Assert.IsTrue(token.gameObject.activeInHierarchy);
+            Assert.AreSame(firstIdle, sr.sprite);
+            // Clean up
+            Object.Destroy(alien);
+            Object.Destroy(token.gameObject);
+        }
     }
 
     // 3) Player overlap collects: internal state switches to collected (sprites -> collectedAnimation, frame -> 0)

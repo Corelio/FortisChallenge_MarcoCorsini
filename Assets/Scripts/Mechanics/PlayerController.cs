@@ -1,4 +1,9 @@
-﻿using UnityEngine;
+﻿// Created to separate player control logic from jump logic for easier testing.
+// Also implements interfaces for input, ground probing, and jump model parameters.
+// This allows for mocking these dependencies in unit tests.
+// Depends on Platformer.Interfaces abstractions.
+
+using UnityEngine;
 using Platformer.Gameplay;
 using static Platformer.Core.Simulation;
 using Platformer.Model;
@@ -67,6 +72,7 @@ namespace Platformer.Mechanics
             m_JumpAction = InputSystem.actions.FindAction("Player/Jump");
         }
 
+        // Override Update to handle input and jump logic
         protected override void Update()
         {
             if (controlEnabled)
@@ -82,6 +88,8 @@ namespace Platformer.Mechanics
                 m_JumpAction.Disable();
             }
 
+            // Process jump logic
+            // using the separated PlayerJumpLogic class
             var outp = jumpLogic.Tick(
                 jumpState,
                 this,
@@ -97,6 +105,7 @@ namespace Platformer.Mechanics
 
             targetVelocity = new Vector2(outp.TargetVelocityX, 0f);
 
+            // Update sprite direction and animator parameters
             if (outp.TargetVelocityX > 0.01f) spriteRenderer.flipX = false;
             else if (outp.TargetVelocityX < -0.01f) spriteRenderer.flipX = true;
 
@@ -118,8 +127,10 @@ namespace Platformer.Mechanics
             base.Update();
         }
 
+        // ComputeVelocity overridden to integrate jump logic
         protected override void ComputeVelocity()
         {
+            // Update vertical velocity based on jump logic
             velocity.y = jumpLogic.ComputeNewVelY(
                 IsGrounded,
                 velocity.y,
@@ -133,6 +144,7 @@ namespace Platformer.Mechanics
             doJumpImpulsePending = false;
             applyJumpCutPending = false;
 
+            // Set horizontal target velocity
             targetVelocity = new Vector2(move.x * maxSpeed, velocity.y);
         }
     }

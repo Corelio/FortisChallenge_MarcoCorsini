@@ -1,3 +1,5 @@
+// Created to hold player jump logic separated from PlayerController for easier testing.
+
 using Platformer.Interfaces;
 
 namespace Platformer.Gameplay

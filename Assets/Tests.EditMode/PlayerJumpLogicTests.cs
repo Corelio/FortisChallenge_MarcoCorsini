@@ -26,7 +26,7 @@ class FakeModel : IJumpModel
 
 public class PlayerJumpLogicTests
 {
-    // 1) Grounded → PrepareToJump/Jumping (impulse applied exactly once)
+    // 1) Grounded -> PrepareToJump/Jumping (impulse applied exactly once)
     [Test]
     public void Grounded_PressJump_TriggersImpulse_AndEntersJump()
     {
@@ -61,7 +61,7 @@ public class PlayerJumpLogicTests
         Assert.IsFalse(t1.DoJumpImpulse);
     }
 
-    // 3) Jumping → InFlight when we leave the ground
+    // 3) Jumping -> InFlight when we leave the ground
     [Test]
     public void Jumping_LeavesGround_BecomesInFlight()
     {
@@ -130,7 +130,7 @@ public class PlayerJumpLogicTests
         Assert.AreEqual(-3f, vy, 1e-5f);
     }
     
-    // 6) InFlight → Landed when ground is regained
+    // 6) InFlight -> Landed when ground is regained
     [Test]
     public void InFlight_To_Landed_WhenTouchingGround()
     {
@@ -146,7 +146,7 @@ public class PlayerJumpLogicTests
         Assert.AreEqual(JumpState.Landed, t1.NewState);
     }
 
-    // 7) Landed → Grounded on the next evaluation
+    // 7) Landed -> Grounded on the next evaluation
     [Test]
     public void Landed_Returns_To_Grounded()
     {
@@ -220,7 +220,7 @@ public class PlayerJumpLogicTests
         Assert.AreEqual(3f, vy, 1e-5f);
     }
 
-    // 12) Full jump cycle test: Grounded → Jumping (impulse) → InFlight → Landed → Grounded
+    // 12) Full jump cycle test: Grounded -> Jumping (impulse) -> InFlight -> Landed -> Grounded
     [Test]
     public void Jump_State_Progression_Grounded_To_Landed()
     {
@@ -231,26 +231,26 @@ public class PlayerJumpLogicTests
 
         var state = JumpState.Grounded;
 
-        // Press jump on ground → PrepareToJump → Jumping + impulse
+        // Press jump on ground -> PrepareToJump -> Jumping + impulse
         input.pressed = true;
         var t0 = logic.Tick(state, input, ground, model, maxSpeed:7, jumpTakeOffSpeed:7, currentVelY:0);
         Assert.AreEqual(JumpState.Jumping, t0.NewState);
         Assert.IsTrue(t0.DoJumpImpulse);
         state = t0.NewState;
 
-        // Leave ground → InFlight
+        // Leave ground -> InFlight
         ground.IsGrounded = false;
         var t1 = logic.Tick(state, input, ground, model, 7, 7, currentVelY:0);
         Assert.AreEqual(JumpState.InFlight, t1.NewState);
         state = t1.NewState;
 
-        // Come back to ground → Landed
+        // Come back to ground -> Landed
         ground.IsGrounded = true;
         var t2 = logic.Tick(state, input, ground, model, 7, 7, currentVelY:-1);
         Assert.AreEqual(JumpState.Landed, t2.NewState);
         state = t2.NewState;
 
-        // Landed → Grounded
+        // Landed -> Grounded
         var t3 = logic.Tick(state, input, ground, model, 7, 7, currentVelY:0);
         Assert.AreEqual(JumpState.Grounded, t3.NewState);
     }
