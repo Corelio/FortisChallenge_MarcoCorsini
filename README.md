@@ -33,8 +33,6 @@ Covers:
 - Valid token spawn positions (no wall overlaps)
 - Player collection → sprite & animation switch
 - Non-player overlaps (Enemy/Alien) ignored
-- Token sound playback verified
-- Position of spawned audio validated
 
 ### 💀 Player Death System
 **File:** `Assets/Tests.PlayMode/PlayerDeathPlayModeTests.cs`
@@ -52,7 +50,6 @@ Covers:
 - Path respects walls and ground
 - Detects missing ground or platform edges
 - Degenerate (zero-length) path rejected
-- *Rotated parent path temporarily skipped* (optional bonus case)
 
 ---
 
@@ -110,19 +107,6 @@ When built with the `DEMO_BUILD` define, an orange cat icon appears in the corne
 
 **File:** `Assets/Scripts/Demo/OrangeCat.cs`
 **Define:** `DEMO_BUILD`
-
----
-
-## ⚙️ Build Modes
-
-| Mode | Defines | Options | Purpose |
-|------|----------|----------|----------|
-| **Demo/Test** | `DEV_BUILD;ENABLE_LOGS;DEMO_BUILD` | Development build, profiler enabled | For internal QA / testers |
-| **Release** | `PROD_BUILD;DISABLE_LOGS` | Code stripping, compression | Public / production builds |
-
-**Editor entrypoints:**
-`BuildPipelineFortis::BuildTestWin64()`
-`BuildPipelineFortis::BuildReleaseWin64()`
 
 ---
 
